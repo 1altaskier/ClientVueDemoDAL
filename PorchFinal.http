@@ -1,0 +1,16 @@
+@PorchFinal_HostAddress = http://localhost:5210
+
+GET {{PorchFinal_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{PorchFinal_HostAddress}}/clients/
+Accept: application/json
+
+###
+
+PUT {{PorchFinal_HostAddress}}/clients/
+Accept: application/json
+
+###
