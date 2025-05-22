@@ -47,6 +47,8 @@ public class ClientsController : ControllerBase
             .Include(c => c.Phones)
             .FirstOrDefaultAsync(c => c.ClientId == id);
 
+
+
             if (client == null)
             {
                 return NotFound("Client Not Found");
