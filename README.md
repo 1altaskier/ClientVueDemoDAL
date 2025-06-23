@@ -37,7 +37,7 @@ PorchFinal.DAL/
 1. **Clone the Repository**:
 
 ```bash
-git clone https://github.com/1altaskier/PorchFinal.DAL.git
+git clone https://github.com/1altaskier/Client.git
 cd PorchFinal.DAL
 ```
 
