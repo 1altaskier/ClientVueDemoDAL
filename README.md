@@ -31,3 +31,12 @@ PorchFinal.DAL/
 │ └── ApplicationDbContext.cs
 ├── Program.cs
 ├── appsettings.json
+
+## 🛠️ Setup Instructions
+
+1. **Clone the Repository**:
+
+```bash
+git clone https://github.com/1altaskier/PorchFinal.DAL.git
+cd PorchFinal.DAL
+```
