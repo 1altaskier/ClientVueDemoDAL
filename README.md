@@ -16,6 +16,7 @@ This project serves as the backend API and data access layer for managing client
 
 ## 📁 Project Structure
 
+```
 PorchFinal.DAL/
 ├── Controllers/
 │ └── ClientsController.cs
@@ -31,6 +32,7 @@ PorchFinal.DAL/
 │ └── ApplicationDbContext.cs
 ├── Program.cs
 ├── appsettings.json
+```
 
 ## 🛠️ Setup Instructions
 
