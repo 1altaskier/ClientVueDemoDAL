@@ -60,7 +60,8 @@ GET	/api/PhoneTypes	Get all phone types
 - LastName
 - Email
 - IsArchived
--> Phones: List<Phone>
+- Phones->
+  - List<Phone>
   - Phone
   - PhoneId
   - PhoneNumber
