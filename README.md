@@ -1,4 +1,4 @@
-# CientVueDemoDAL
+# ClientVueDemoDAL
 
 This project serves as the backend API and data access layer for managing client information and their associated phone numbers. Built with ASP.NET Core and Entity Framework Core, it powers the ClientVueDemoUX frontend.
 
