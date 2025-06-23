@@ -15,3 +15,19 @@ This project serves as the backend API and data access layer for managing client
 ---
 
 ## 📁 Project Structure
+
+PorchFinal.DAL/
+├── Controllers/
+│ └── ClientsController.cs
+│ └── PhoneTypesController.cs
+├── Models/
+│ └── Client.cs
+│ └── Phone.cs
+│ └── PhoneType.cs
+├── DTOs/
+│ └── ClientReadDto.cs
+│ └── ClientUpdateDto.cs
+├── Data/
+│ └── ApplicationDbContext.cs
+├── Program.cs
+├── appsettings.json
