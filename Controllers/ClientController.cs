@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PorchFinal.Data;
+using PorchFinal.DTOs.Clients;
 using PorchFinal.Models;
 
 [Route("api/[controller]")]
@@ -47,8 +48,6 @@ public class ClientsController : ControllerBase
             .Include(c => c.Phones)
             .FirstOrDefaultAsync(c => c.ClientId == id);
 
-
-
             if (client == null)
             {
                 return NotFound("Client Not Found");
@@ -74,27 +73,42 @@ public class ClientsController : ControllerBase
 
     // PUT: api/Clients/5
     [HttpPut("{id}")]
-    public async Task<ActionResult<Client>> UpdateClient(Client updatedClient)
+    public async Task<ActionResult<Client>> UpdateClient(int id, ClientUpdateDto dto)
     {
-        if (updatedClient.ClientId != updatedClient.ClientId)
+        if (id != dto.ClientId)
         {
-            return BadRequest("Client ID mismatch.");
+            return BadRequest("Client ID mismatch");
         }
 
-        var client = await _context.Clients.FindAsync(updatedClient.ClientId);
+        var client = await _context.Clients
+            .Include(c => c.Phones)
+            .FirstOrDefaultAsync(c => c.ClientId == id);
+
         if (client == null)
         {
             return NotFound("Client Not Found");
         }
 
-        // Update fields
-        client.FirstName = updatedClient.FirstName;
-        client.LastName = updatedClient.LastName;
-        client.Email = updatedClient.Email;
-        client.IsArchived = updatedClient.IsArchived;
-        //client.Offender = updatedClient.Offender;
-        //client.RepeatOffender = updatedClient.RepeatOffender;
-        client.Phones = updatedClient.Phones;
+        // Update scalar fields
+        client.FirstName = dto.FirstName;
+        client.LastName = dto.LastName;
+        client.Email = dto.Email;
+        client.IsArchived = dto.IsArchived;
+
+        // Remove existing phones
+        foreach (var phone in client.Phones.ToList())
+        {
+            _context.Phones.Remove(phone);
+        }
+
+        // Add phones from DTO
+        client.Phones = dto.Phones.Select(p => new Phone
+        {
+            PhoneId = p.PhoneId,          // Optional: assign if you want to preserve IDs
+            PhoneNumber = p.PhoneNumber,
+            PhoneTypeId = p.PhoneTypeId,
+            ClientId = client.ClientId
+        }).ToList();
 
         try
         {

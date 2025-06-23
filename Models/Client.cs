@@ -22,4 +22,11 @@ namespace PorchFinal.Models
 
         public ICollection<Phone>? Phones { get; set; } = new List<Phone>();
     }
+
+    public class PhoneDto
+    {
+        public int PhoneId { get; set; } // Use 0 for new phones
+        public string PhoneNumber { get; set; } = string.Empty;
+        public int PhoneTypeId { get; set; }
+    }
 }

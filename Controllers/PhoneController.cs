@@ -50,15 +50,15 @@ public class PhonesController : ControllerBase
         }
     }
 
-    //[HttpPost]
-    //public async Task<ActionResult<Phone>> PostPhone(Phone phone)
-    //{
-    //    _context.Phone.Add(phone);
-    //    await _context.SaveChangesAsync();
+    [HttpPost]
+    public async Task<ActionResult<Phone>> PostPhone(Phone phone)
+    {
+        _context.Phones.Add(phone);
+        await _context.SaveChangesAsync();
 
-    //    // Returns 201 Created with a route to the new resource
-    //    return CreatedAtAction(nameof(GetPhone), new { id = phone.PhoneId }, phone);
-    //}
+        // Returns 201 Created with a route to the new resource
+        return CreatedAtAction(nameof(GetPhone), new { id = phone.PhoneId }, phone);
+    }
 
     // PUT: api/Phones/5
     [HttpPut("{id}")]
