@@ -39,5 +39,7 @@ PorchFinal.DAL/
 ```bash
 git clone https://github.com/1altaskier/ClientVueDemoDAL.git
 cd PorchFinal.DAL
-
+```
+Configure the Database
+Update appsettings.json with your connection string.
 
