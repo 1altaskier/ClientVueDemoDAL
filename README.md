@@ -43,3 +43,13 @@ cd ClientVueDemoDAL
 Configure the Database
 Update appsettings.json with your connection string.
 
+---
+
+🌐 API Endpoints
+Method	Endpoint	Description
+GET	/api/Clients	Get all clients
+GET	/api/Clients/{id}	Get a single client
+POST	/api/Clients	Create new client
+PUT	/api/Clients/{id}	Update client info
+GET	/api/PhoneTypes	Get all phone types
+
