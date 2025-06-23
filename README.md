@@ -45,7 +45,7 @@ Update appsettings.json with your connection string.
 
 ---
 
-🌐 API Endpoints
+## 🌐 API Endpoints
 Method	Endpoint	Description
 GET	/api/Clients	Get all clients
 GET	/api/Clients/{id}	Get a single client
