@@ -54,30 +54,20 @@ PUT	/api/Clients/{id}	Update client info
 GET	/api/PhoneTypes	Get all phone types
 
 📦 Entity Models
-Client
-ClientId
-
-FirstName
-
-LastName
-
-Email
-
-IsArchived
-
-Phones: List<Phone>
-
-Phone
-PhoneId
-
-PhoneNumber
-
-PhoneTypeId
-
-ClientId
-
-PhoneType
-PhoneTypeId
+- Client
+- ClientId
+- FirstName
+- LastName
+- Email
+- IsArchived
+-> Phones: List<Phone>
+  - Phone
+  - PhoneId
+  - PhoneNumber
+  - PhoneTypeId
+  - ClientId
+  - PhoneType
+  - PhoneTypeId
 
 Type
 
