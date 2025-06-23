@@ -76,7 +76,7 @@ Type
 
 ---
 
-🔌 Consumes From
+## 🔌 Consumes From
 This API is consumed by the ClientVueDemoUX frontend.
 
 --
