@@ -17,7 +17,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowVueDevClient", policy =>
     {
-        policy.WithOrigins("http://localhost:5173") // Vue dev server
+        policy.WithOrigins("http://localhost:5174") // Vue dev server
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
