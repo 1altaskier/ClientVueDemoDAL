@@ -15,11 +15,13 @@ builder.Services.AddSwaggerGen();
 // Add CORS services
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowVueDevClient", policy =>
+    options.AddPolicy("AllowLocalDev", policy =>
     {
-        policy.WithOrigins("http://localhost:5174") // Vue dev server
-              .AllowAnyHeader()
-              .AllowAnyMethod();
+        policy
+            .SetIsOriginAllowed(origin =>
+                new Uri(origin).Host == "localhost")
+            .AllowAnyMethod()
+            .AllowAnyHeader();
     });
 });
 
@@ -32,8 +34,13 @@ builder.Services.AddControllers()
 
 var app = builder.Build();
 
+app.UseRouting();
+
 // Use CORS
-app.UseCors("AllowVueDevClient");
+if (app.Environment.IsDevelopment())
+{
+    app.UseCors("AllowLocalDev");
+}
 
 // Middleware
 app.UseSwagger();
